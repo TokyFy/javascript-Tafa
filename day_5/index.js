@@ -8,7 +8,9 @@ const result = document.querySelector(".result");
 
 expressionBtn.forEach(el => {
     el.onclick = function (ev) {
-        if( result.innerText === "SYNTAX ERROR")  result.innerText = "";
+        if(result.innerText !== "") inputExp.innerText = "";
+
+        result.innerText = "";
         inputExp.innerText += ev.target.textContent
     }
 })
@@ -16,9 +18,8 @@ expressionBtn.forEach(el => {
 calculate.onclick = function () {
     try {
         const expr = inputExp.innerText;
-        if(expr !== "") result.innerText = eval(inputExp.innerText);
+        if(expr !== "") result.innerText = String(eval(inputExp.innerText)).slice(0,15);
     } catch (_err) {
-        inputExp.innerText = "";
         result.innerText = "SYNTAX ERROR";
     }
 }
