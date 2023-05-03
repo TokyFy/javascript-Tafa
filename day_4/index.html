@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+       body {
+           margin-top: 48px;
+           background-color: white;
+           font-family: monospace;
+           display: flex;
+           justify-content: center;
+           flex-direction: column;
+           align-items: center;
+       }
+
+
+       table {
+           border-collapse: collapse;
+           margin-top: 42px;
+       }
+
+       table td {
+           padding: 8px 8px;
+           border: 1px solid black;
+           margin: 0;
+       }
+
+       .stats {
+           margin-top: 24px;
+           font-weight: bold;
+       }
+
+    </style>
+</head>
+<body>
+<h1>Fokontany</h1>
+<table class="allData">
+    <tr>
+        <td>firstName</td>
+        <td>lastName</td>
+        <td>Age</td>
+        <td>cin</td>
+        <td>address</td>
+        <td>sexe</td>
+    </tr>
+    <tbody>
+        <tr id="template">
+            <td class="firstName"></td>
+            <td class="lastName"></td>
+            <td class="age"></td>
+            <td class="cin"></td>
+            <td class="address"></td>
+            <td class="sexe"></td>
+        </tr>
+    </tbody>
+</table>
+    <p class="stats">Hellowwww</p>
+
+<script src="index.js"></script>
+</body>
+</html>
