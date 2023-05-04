@@ -25,4 +25,3 @@ function validateForm() {
 }
 
 submit.onclick = validateForm;
-
