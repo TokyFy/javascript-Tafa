@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 10px;
+}
+
+body {
+    font-family: monospace;
+    font-size: 1.6rem;
+    padding: 4rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.8rem;
+}
+
+main {
+    width: 50%;
+    margin: 0 auto;
+}
+
+input {
+    font-family: monospace;
+    font-weight: 600;
+    font-size: 1.8rem;
+    padding-left: 1.8rem;
+}
+
+input::placeholder {
+    opacity: .3;
+}
+
+.form {
+    border-radius: .5rem;
+    padding: 3.2rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+
+.form h2 {
+    margin-bottom: 2.4rem;
+}
+
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.6rem;
+}
+
+
+.inputWrapper input {
+    border: 2px solid transparent;
+    background-color: #faf9f7;
+    height: 4.2rem;
+    border-radius: 3px;
+}
+
+.inputWrapper label {
+    color: black;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 1.8rem;
+}
+
+
+.inputWrapper label {
+    margin-bottom: 1.6rem;
+}
+
+.btn {
+    height: 4.2rem;
+    background-color: white;
+    color: black;
+    font-weight: 600;
+    font-size: 1.6rem;
+    cursor: pointer;
+    border-radius: .5rem;
+    border: 2px solid black;
+}
+
+
+.list {
+    margin-bottom: 2.4rem;
+}
+
+/*CARD*//*CARD*//*CARD*/
+
+.card {
+    border-radius: .5rem;
+    padding: 3.2rem;
+    background-color: #faf9f7;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+
+.card .label {
+    opacity: .5;
+}
+
+.card .field {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: .8rem 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
