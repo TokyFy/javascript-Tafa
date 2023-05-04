@@ -61,10 +61,10 @@ h1 {
     padding: 12px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 40% 1fr;
-    height: 112px;
+    grid-template-rows: 1fr 1fr;
     color: #28262e;
     background-color: #d9e9f7b5;
+    min-height: 122px;
 }
 
 .screen > div {
@@ -90,6 +90,8 @@ h1 {
     justify-content: flex-end;
     align-items: flex-end;
     opacity: .8;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 .screen .result {
@@ -101,5 +103,4 @@ h1 {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-
 }
