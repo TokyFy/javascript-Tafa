@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -10,27 +10,34 @@
 </head>
 <body>
 <main>
+    <div class="theme-switcher">
+        <p>Themes</p>
+        <label class="switch" id="themeToggler">
+            <div class="input"></div>
+            <span class="slider"></span>
+        </label>
+    </div>
     <h1>Hello Js</h1>
     <div>
         <div class="list">
-            <div class="card">
-                <div class="field">
-                    <p class="label">Name</p>
-                    <p id="p-name" class="value">Toky</p>
-                </div>
-                <div class="field">
-                    <p class="label">Mail</p>
-                    <p id="p-mail" class="value">Tokyfydev@gmail.com</p>
-                </div>
-                <div class="field">
-                    <p class="label">CIN</p>
-                    <p id="p-cin" class="value">031 031 031 331</p>
-                </div>
-                <div class="field">
-                    <p class="label">Phone</p>
-                    <p id="p-phone" class="value">032 32 332 32</p>
-                </div>
-            </div>
+            <table id="table-list">
+                <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Mail</td>
+                    <td>Phone</td>
+                    <td>CIN</td>
+                </tr>
+                </thead>
+                <tbody contenteditable="true">
+                <tr>
+                    <td>Toky</td>
+                    <td>Toky@outlook.com</td>
+                    <td>010 010 010 010 010</td>
+                    <td>010 01 010 01</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
         <div class="form">
             <h2>
@@ -52,7 +59,7 @@
                 </div>
                 <div class="inputWrapper">
                     <label for="phone">Phone</label>
-                    <input type="text" name="name" id="phone" placeholder="031 31 311 31" autocomplete="off">
+                    <input type="text" name="phone" id="phone" placeholder="031 31 311 31" autocomplete="off">
                 </div>
                 <div class="inputWrapper">
                     <button type="button" class="btn" id="submit">Submit</button>

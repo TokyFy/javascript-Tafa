@@ -12,6 +12,14 @@ body {
     font-family: monospace;
     font-size: 1.6rem;
     padding: 4rem;
+    background-color: #e6e9fd;
+    color: #2B3467;
+}
+
+
+[data-theme="Dark"] body {
+    background-color: #041C32;
+    color: white;
 }
 
 h1 {
@@ -39,6 +47,11 @@ input::placeholder {
     border-radius: .5rem;
     padding: 3.2rem;
     box-shadow: rgba(0, 0, 0, 0.1) 0 0 5px 0, rgba(0, 0, 0, 0.1) 0 0 1px 0;
+    background-color: #d3d9ff;
+}
+
+[data-theme="Dark"] .form {
+    background-color: #064663;
 }
 
 .form h2 {
@@ -60,10 +73,14 @@ input::placeholder {
 }
 
 .inputWrapper label {
-    color: black;
+    color: #2B3467;
     font-weight: bold;
     font-family: monospace;
     font-size: 1.8rem;
+}
+
+[data-theme="Dark"] .inputWrapper label {
+    color: white;
 }
 
 
@@ -79,31 +96,130 @@ input::placeholder {
     font-size: 1.6rem;
     cursor: pointer;
     border-radius: .5rem;
-    border: 2px solid black;
+    border: 2px solid #2B3467;
+    transition: all .5s ease-out;
+}
+
+.btn:hover {
+    background-color: #2B3467;
+    color: white;
+}
+
+[data-theme="Dark"] .btn {
+    border: 2px solid #064663;
+    transition: all .5s ease-out;
+}
+
+[data-theme="Dark"] .btn:hover {
+    background-color: #0b83b9;
+    color: white;
 }
 
 
 .list {
     margin-bottom: 2.4rem;
-}
-
-/*CARD*//*CARD*//*CARD*/
-
-.card {
-    border-radius: .5rem;
-    padding: 3.2rem;
-    background-color: #faf9f7;
+    padding: 1.6rem;
     box-shadow: rgba(0, 0, 0, 0.1) 0 0 5px 0, rgba(0, 0, 0, 0.1) 0 0 1px 0;
+    border-radius: .5rem;
+    background-color: #d3d9ff;
 }
 
-.card .label {
-    opacity: .5;
+[data-theme="Dark"] .list {
+    background-color: #064663;
 }
 
-.card .field {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: .8rem 0;
+.list table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    font-family: monospace;
     font-size: 1.8rem;
     font-weight: 600;
+    table-layout: fixed;
+}
+
+.list table thead {
+    font-weight: bold;
+}
+
+.list table td {
+    border: 3px solid #2B3467;
+    padding: 1.2rem;
+    border-radius: .5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+[data-theme="Dark"] .list table td {
+    border-color: white;
+}
+
+.theme-switcher {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 4.8rem;
+}
+
+.theme-switcher p {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+/* SWITCH */
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch .input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2B3467;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.input.checked + .slider {
+    background-color: white;
+}
+
+.input.checked + .slider:before {
+    background-color: #064663;
+}
+
+
+.input.checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
 }
