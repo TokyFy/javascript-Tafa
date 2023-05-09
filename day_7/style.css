@@ -1,0 +1,155 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: color,background-color .5s ease-out;
+}
+
+:root {
+    font-family: monospace;
+    font-size: 10px;
+}
+
+body {
+    font-size: 1rem;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background-color 1.5s;
+}
+
+main {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.timer {
+    display: flex;
+    gap: 2.4rem;
+}
+
+.timer > div {
+    flex-grow: 1;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-wrapper {
+    border: 3px solid black;
+    border-radius: 1rem;
+    font-size: 14.2rem;
+}
+
+[data-theme="Dark"] .input-wrapper {
+    border-color: white;
+}
+
+.btn {
+    background-color: black;
+    display: inline-flex;
+    color: white;
+    font-size: 2.8rem;
+    padding: 1.6rem 3.2rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+[data-theme="Dark"] .btn {
+    background-color: white;
+    color: black;
+}
+
+.btn-wrapper {
+    margin-top: 4.8rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.6rem;
+}
+
+.btn.disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+
+.theme-switcher {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 9.6rem;
+}
+
+.theme-switcher p {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+/*Dark mode*/
+
+[data-theme="Dark"] body {
+    background-color: black;
+    color: white;
+}
+
+/* SWITCH */
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch .input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.input.checked + .slider {
+    background-color: white;
+}
+
+.input.checked + .slider:before {
+    background-color: black;
+}
+
+
+.input.checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" data-theme="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Chronos</title>
+</head>
+<body>
+    <main>
+        <div class="theme-switcher">
+            <p>Themes</p>
+            <label class="switch" id="themeToggler">
+                <div class="input"></div>
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="timer">
+            <div class="input-wrapper minute">
+                00
+            </div>
+            <div class="input-wrapper second">
+                00
+            </div>
+            <div class="input-wrapper tiers">
+                00
+            </div>
+        </div>
+       <div class="btn-wrapper">
+           <div class="btn" id="start">Start</div>
+           <div class="btn disabled" id="pause">Pause</div>
+           <div class="btn" id="reset">Reset</div>
+       </div>
+    </main>
+<script src="./index.js"></script>
+</body>
+</html>
