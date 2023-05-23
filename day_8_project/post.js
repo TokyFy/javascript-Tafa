@@ -5,6 +5,7 @@ const postId = urlParams.get("postId");
 
 const postTemplate = document.querySelector("#template .post");
 const commentTemplate = document.querySelector("#template .comment");
+const errorTemplate = document.getElementById("error");
 
 function addPost({author, mail, title, body, commentNumber}) {
     const node = postTemplate.cloneNode(true);
@@ -17,7 +18,7 @@ function addPost({author, mail, title, body, commentNumber}) {
     wrapper.appendChild(node);
 }
 
-function addcomment({username , body }) {
+function addcomment({username, body}) {
     const comment = commentTemplate.cloneNode(true);
     comment.querySelector(".comment-author").innerText = username;
     comment.querySelector(".comment-body").innerText = body;
@@ -27,8 +28,19 @@ function addcomment({username , body }) {
 
 const URL = "https://jsonplaceholder.typicode.com";
 
+function error() {
+    document.querySelector(".post-wrapper").innerHTML = "";
+    document.querySelector(".comments").innerHTML = "";
+    const error = errorTemplate.cloneNode(true);
+    document.querySelector(".post-wrapper").appendChild(error);
+}
+
+
 fetch(`${URL}/posts/${postId}`)
-    .then(res => res.json())
+    .then(res => {
+        if(res.status !== 200) throw new Error("Error")
+        return  res.json()
+    })
     .then(post => {
         fetch(`${URL}/users/${post.userId}`)
             .then(res => res.json())
@@ -37,12 +49,14 @@ fetch(`${URL}/posts/${postId}`)
                 addPost({title: post.title, body: post.body, author: author.name, mail: author.email})
             })
     })
-
+    .catch(err => {
+        error();
+    })
 fetch(`${URL}/posts/${postId}/comments`)
     .then(res => res.json())
     .then(comments => {
         document.querySelector(".comment-wrapper").innerHTML = "";
         comments.forEach(comment => {
-            addcomment({username : comment.email , body : comment.body})
+            addcomment({username: comment.email, body: comment.body})
         })
     })

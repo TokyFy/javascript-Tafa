@@ -21,3 +21,14 @@
     font-size: 1.4rem;
     margin-bottom: .6rem;
 }
+
+#error {
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.2rem;
+    padding: 2.4rem 0;
+    text-transform: uppercase;
+    font-weight: 800;
+}
