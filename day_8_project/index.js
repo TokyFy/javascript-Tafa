@@ -4,8 +4,7 @@ const posts = document.querySelector(".posts");
 const morePost = document.querySelector(".more-post");
 
 
-function addPost({author, mail, title, body, commentNumber}) {
-
+function addPost({author, mail, title, body, commentNumber , id}) {
     const node = postTemplate.cloneNode(true);
     node.querySelector(".post--name").innerText = author;
     node.querySelector(".post--mail").innerText = mail;
@@ -13,6 +12,9 @@ function addPost({author, mail, title, body, commentNumber}) {
     node.querySelector(".post--content p").innerText = body;
     node.querySelector(".post--footer .comment").innerText = commentNumber;
 
+    node.addEventListener("click" , ev=> {
+        window.location.href = `/post.html?postId=${id}`;
+    })
     posts.appendChild(node);
 }
 
@@ -52,7 +54,8 @@ function displayPosts(page , limit) {
                     body: el.body,
                     title: el.title,
                     commentNumber: commentNumber,
-                    mail: mail
+                    mail: mail,
+                    id : el.id
                 })
             }
 
