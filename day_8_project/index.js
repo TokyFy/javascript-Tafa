@@ -26,7 +26,7 @@ function addPostLoader() {
 function removePostLoader() {
     const loader = document.querySelector(".posts > #loaders");
     if(loader) loader.remove();
-    window.scrollTo(0, document.body.scrollHeight);
+    // window.scrollTo(0, document.body.scrollHeight);
 }
 
 let page = 1;
